@@ -1,4 +1,3 @@
-// Mobile Navigation 
 document.addEventListener('DOMContentLoaded', function() {
     const navToggle = document.getElementById('navToggle');
     const navMenu = document.getElementById('navMenu');
@@ -8,7 +7,25 @@ document.addEventListener('DOMContentLoaded', function() {
     const closeBtn = document.getElementById('modalClose');
     const cancelBtn = document.getElementById('modalCancel');
     const exploreBtn = document.getElementById('modalExplore');
-    const body = document.body; 
+    const body = document.body;
+    const copyrightElement = document.querySelector('.footer-bottom p');
+
+    if (copyrightElement) {
+        const startYear = 2025;
+        const currentYear = new Date().getFullYear();
+        
+        let yearText;
+        if (currentYear > startYear) {
+            yearText = `${startYear}-${currentYear}`;
+        } else {
+            yearText = startYear;
+        }
+        
+        copyrightElement.innerHTML = copyrightElement.innerHTML.replace(
+            '2024',
+            yearText
+        );
+    } 
 
     // Modal on page load
     setTimeout(() => {
